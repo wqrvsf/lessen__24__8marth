@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    background: url(../img/fon4.jpg) center/cover;
+    overflow: hidden;
+    font-family: 'Marck Script', cursive;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: rgb(243, 171, 207);
+    perspective: 1000px;
+    transform: rotate(-20deg);
+    transition: all 2s;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 250px);
+}
+
+.card.open {
+    transform: rotate(0deg);
+    left: 50%;
+}
+
+.card, .card__page {
+    width: 350px;
+    height: 500px;
+}
+
+.card__page {
+    position: absolute;
+}
+
+.card__page-front {
+    z-index: 10;
+    background-color: rgb(227, 90, 182);
+    transform-style: preserve-3d;
+    transform-origin: 0 50% 0;
+    transition: transform 3s;
+}
+
+.card.open .card__page-front {
+    transform: rotateY(-180deg);
+}
+
+.card__page-outside, 
+.card__page-inside {
+    backface-visibility: hidden;
+}
+
+.card__page-inside {
+    transform: rotateY(-180deg);
+}
+
+.card__page-bottom {
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__page-img {
+    width: 350px;
+    height: 500px;
+}
+
+.card__page-img2 {
+    width: 350px;
+    height: 400px;
+    margin-top: 100px;
+}
